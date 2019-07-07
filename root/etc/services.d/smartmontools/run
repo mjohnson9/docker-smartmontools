@@ -1,3 +1,5 @@
 #!/usr/bin/with-contenv bash
 
-exec /usr/sbin/smartd --debug
+mkdir -p /var/lib/smartmontools/states /var/lib/smartmontools/attributelog
+
+exec /usr/sbin/smartd --debug --savestates=/var/lib/smartmontools/states/ --attributelog=/var/lib/smartmontools/attributelog/
